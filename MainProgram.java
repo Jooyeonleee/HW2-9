@@ -25,7 +25,39 @@ public class MainProgram {
     public void runModule(int studentID) {
         if (studentID == 11530)
             System.out.println("No. It is the professor ID.\n");
-        else
+        else if (studentID == 1815060){
+            System.out.println("[Student ID: "+studentID+"]");
+            myfunc();
+        }
+        else{
             System.out.println("To be developed...\n");
+        }
+    }
+    public void myfunc(){
+        Scanner sc = new Scanner(System.in);
+        int num,a,b;
+        System.out.println("1. Calculate max");
+        System.out.println("2. Calculate min");
+        System.out.print("Enter menu number: ");
+        num = sc.nextInt();
+        if(num == 1){
+            System.out.print("Enter two numbers to compare:");
+            a = sc.nextInt();
+            b = sc.nextInt();
+            System.out.println("Max value is " +max(a,b));
+        }
+        if(num == 2){
+            System.out.print("Enter two numbers to compare:");
+            a = sc.nextInt();
+            b = sc.nextInt();
+            System.out.println("Min value is " +min(a,b));
+        }
+        return;
+    }
+    public int max(int a,int b){
+        return (a>b)? a:b;
+    }
+    public int min(int a,int b){
+        return (a<b)? a:b;
     }
 }
