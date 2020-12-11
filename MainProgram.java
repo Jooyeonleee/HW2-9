@@ -33,10 +33,46 @@ public class MainProgram {
         	System.out.println("[Student ID: " + studentID + "]");
         	menu_1814965();
         }
+	else if(studentID == 1815514) {
+		System.out.println("[Student ID: 1815514]");
+		calculate_1815514();
+	}
         else{
             System.out.println("To be developed...\n");
         }
     }
+
+    public void calculate_1815514(){
+    	Scanner input = new Scanner(System.in);
+	System.out.println("1.Calculate factorial");
+	System.out.println("2.Calculate absolute value");
+	int menu = input.nextInt();
+	if(menu == 1){
+		System.out.print("Enter factorial number: ");
+		int num1 = input.nextInt();
+		System.out.println("The result of "+num1+"! is "+getFactorial(num1)+".");
+	}
+	else if(menu==2){
+		System.out.print("Enter number you want to change into absolute value: ");
+		int num2 = input.nextInt();
+		System.out.println("The Absolute value of "+num2+" is "+getAbsolute(num2)+".");
+	}
+	return;
+    }
+    public int getFactorial(int n){
+	    int result = 1;
+	    for(int i=1;i<=n;i++){
+		    result = result * n;
+	    }
+	    return result;
+    }
+    public int getAbsolute(int n){
+	    int result =0;
+	    if(n>=0) result = n;
+	    else result = (-1)*n;
+	    return result;
+    }
+
     public void myfunc(){
         Scanner sc = new Scanner(System.in);
         int num,a,b;
