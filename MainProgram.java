@@ -97,10 +97,10 @@ public class MainProgram {
     	return;
     }
     
-    public int max(int a,int b){
+    public static int max(int a,int b){
         return (a>b)? a:b;
     }
-    public int min(int a,int b){
+    public static int min(int a,int b){
         return (a<b)? a:b;
     }
     
