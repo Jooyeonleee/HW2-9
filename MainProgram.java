@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class MainProgram {
     public static void main(String[] args) {
@@ -79,19 +80,24 @@ public class MainProgram {
         System.out.println("1. Calculate max");
         System.out.println("2. Calculate min");
         System.out.print("Enter menu number: ");
-        num = sc.nextInt();
-        if(num == 1){
-            System.out.print("Enter two numbers to compare:");
-            a = sc.nextInt();
-            b = sc.nextInt();
-            System.out.println("Max value is " +max(a,b));
+        try{
+            num = sc.nextInt();
+            if(num == 1){
+                System.out.print("Enter two numbers to compare:");
+                a = sc.nextInt();
+                b = sc.nextInt();
+                System.out.println("Max value is " +max(a,b));
+            }
+            if(num == 2){
+                System.out.print("Enter two numbers to compare:");
+                a = sc.nextInt();
+                b = sc.nextInt();
+                System.out.println("Min value is " +min(a,b));
+            }
         }
-        if(num == 2){
-            System.out.print("Enter two numbers to compare:");
-            a = sc.nextInt();
-            b = sc.nextInt();
-            System.out.println("Min value is " +min(a,b));
-        }
+        catch(InputMismatchException ime){
+            System.out.println("Input error");
+        }    
         return;
     }
 
