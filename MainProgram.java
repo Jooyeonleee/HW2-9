@@ -94,7 +94,7 @@ public class MainProgram {
         }
         return;
     }
-    
+
     public void menu_1814965() {
     	Scanner input = new Scanner(System.in);
     	System.out.println("1. Calculate the distance between two points in a two dimensional.");
@@ -132,14 +132,14 @@ public class MainProgram {
     	}
     	return;
     }
-    
-    public static int max(int a,int b){
+
+    public int max(int a,int b){
         return (a>b)? a:b;
     }
-    public static int min(int a,int b){
+    public int min(int a,int b){
         return (a<b)? a:b;
     }
-    
+
     public double DistanceOfTwoPoints_1814965(double[] A, double[] B) {
     	double n = (A[0]-B[0]) * (A[0]-B[0]) + (A[1]-B[1]) * (A[1]-B[1]);
     	double x = 1;
@@ -155,5 +155,5 @@ public class MainProgram {
     			least = x * i;
     	return least;
     }
-    
+
 }
