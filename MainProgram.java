@@ -77,28 +77,52 @@ public class MainProgram {
     public void myfunc(){
         Scanner sc = new Scanner(System.in);
         int num,a,b;
-        System.out.println("1. Calculate max");
-        System.out.println("2. Calculate min");
-        System.out.print("Enter menu number: ");
-        try{
-            num = sc.nextInt();
-            if(num == 1){
-                System.out.print("Enter two numbers to compare:");
-                a = sc.nextInt();
-                b = sc.nextInt();
-                System.out.println("Max value is " +max(a,b));
+        while(true){
+            try{
+                System.out.println("1. Calculate max");
+                System.out.println("2. Calculate min");
+                System.out.print("Enter menu number: ");
+                num = sc.nextInt();
+                if(num==1){
+                    while(true){
+                        try{
+                            System.out.print("Enter two numbers to compare:");
+                            a = sc.nextInt();
+                            b = sc.nextInt();
+                            System.out.println("Max value is " +max(a,b));
+                            return;
+                        }
+                        catch(InputMismatchException ime2){
+                            System.out.println("Enter two integers :(");
+                            sc = new Scanner(System.in);
+                        }
+                    }
+                }
+                if(num==2){
+                    while(true){
+                        try{
+                            System.out.print("Enter two integers to compare:");
+                            a = sc.nextInt();
+                            b = sc.nextInt();
+                            System.out.println("Min value is " +min(a,b));
+                            return;
+                        }
+                        catch(InputMismatchException ime2){
+                            System.out.println("Enter two integers :(");
+                            sc = new Scanner(System.in);
+                        }
+                    }
+                }
+                if((num!=1)&&(num!=2)){
+                    System.out.println("Enter 1 or 2 :(");
+                    sc = new Scanner(System.in);
+                }
             }
-            if(num == 2){
-                System.out.print("Enter two numbers to compare:");
-                a = sc.nextInt();
-                b = sc.nextInt();
-                System.out.println("Min value is " +min(a,b));
+            catch(InputMismatchException ime){
+                System.out.println("Enter 1 or 2 :(");
+                sc = new Scanner(System.in);
             }
         }
-        catch(InputMismatchException ime){
-            System.out.println("Input error");
-        }    
-        return;
     }
 
     public void menu_1814965() {
