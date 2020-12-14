@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class MainProgram {
     public static void main(String[] args) {
@@ -35,6 +36,7 @@ public class MainProgram {
         }
 	else if(studentID == 1815514) {
 		System.out.println("[Student ID: 1815514]");
+<<<<<<< HEAD
 		calculate_1815514();
 	}
 
@@ -44,6 +46,14 @@ public class MainProgram {
         }
 
 
+=======
+        calculate_1815514();
+    }
+        else if(studentID == 1815330){
+            System.out.println("[Student ID : "+ studentID +"]");
+            hw_1815330();
+        }
+>>>>>>> origin/main
         else{
             System.out.println("To be developed...\n");
         }
@@ -84,25 +94,54 @@ public class MainProgram {
     public void myfunc(){
         Scanner sc = new Scanner(System.in);
         int num,a,b;
-        System.out.println("1. Calculate max");
-        System.out.println("2. Calculate min");
-        System.out.print("Enter menu number: ");
-        num = sc.nextInt();
-        if(num == 1){
-            System.out.print("Enter two numbers to compare:");
-            a = sc.nextInt();
-            b = sc.nextInt();
-            System.out.println("Max value is " +max(a,b));
+        while(true){
+            try{
+                System.out.println("1. Calculate max");
+                System.out.println("2. Calculate min");
+                System.out.print("Enter menu number(1 or 2): ");
+                num = sc.nextInt();
+                if(num==1){
+                    while(true){
+                        try{
+                            System.out.print("Enter two integers to compare:");
+                            a = sc.nextInt();
+                            b = sc.nextInt();
+                            System.out.println("Max value is " +max(a,b));
+                            return;
+                        }
+                        catch(InputMismatchException ime2){
+                            System.out.println("Enter two integers :(");
+                            sc = new Scanner(System.in);
+                        }
+                    }
+                }
+                if(num==2){
+                    while(true){
+                        try{
+                            System.out.print("Enter two integers to compare:");
+                            a = sc.nextInt();
+                            b = sc.nextInt();
+                            System.out.println("Min value is " +min(a,b));
+                            return;
+                        }
+                        catch(InputMismatchException ime2){
+                            System.out.println("Enter two integers :(");
+                            sc = new Scanner(System.in);
+                        }
+                    }
+                }
+                if((num!=1)&&(num!=2)){
+                    System.out.println("Enter 1 or 2 :(");
+                    sc = new Scanner(System.in);
+                }
+            }
+            catch(InputMismatchException ime){
+                System.out.println("Enter 1 or 2 :(");
+                sc = new Scanner(System.in);
+            }
         }
-        if(num == 2){
-            System.out.print("Enter two numbers to compare:");
-            a = sc.nextInt();
-            b = sc.nextInt();
-            System.out.println("Min value is " +min(a,b));
-        }
-        return;
     }
-    
+
     public void menu_1814965() {
     	Scanner input = new Scanner(System.in);
     	System.out.println("1. Calculate the distance between two points in a two dimensional.");
@@ -140,14 +179,14 @@ public class MainProgram {
     	}
     	return;
     }
-    
-    public static int max(int a,int b){
+
+    public int max(int a,int b){
         return (a>b)? a:b;
     }
-    public static int min(int a,int b){
+    public int min(int a,int b){
         return (a<b)? a:b;
     }
-    
+
     public double DistanceOfTwoPoints_1814965(double[] A, double[] B) {
     	double n = (A[0]-B[0]) * (A[0]-B[0]) + (A[1]-B[1]) * (A[1]-B[1]);
     	double x = 1;
@@ -163,7 +202,41 @@ public class MainProgram {
     			least = x * i;
     	return least;
     }
-    
+
+    public void hw_1815330(){
+        Scanner sc = new Scanner(System.in);
+        int m,a,b,answer;
+
+        System.out.println("1. Calculate the min of two integers");
+        System.out.println("2. Calculate the max of two integers");
+        System.out.print("Enter menu numbers : ");
+        m=sc.nextInt();
+
+        System.out.print("Input number 1 :");
+        a=sc.nextInt();
+        System.out.print("Input number 2 : ");
+        b=sc.nextInt();
+
+        if(m==1){
+            if(a>=b)
+                answer=b;
+            else
+                answer=a;
+            System.out.println("The min is "+answer);
+        }else if(m==2){
+            if(a>=b)
+                answer=a;
+            else
+                answer=b;
+            System.out.println("The max is "+answer);
+        }else{
+            System.out.println("wrong menu number!");
+        }
+
+        
+
+    }
+
 }
 
 
