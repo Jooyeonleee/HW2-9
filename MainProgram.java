@@ -192,7 +192,7 @@ public class MainProgram {
 
     public void hw_1815330(){
         Scanner sc = new Scanner(System.in);
-        int m,a,b,answer;
+        int m,a,b;
 
         System.out.println("1. Calculate the min of two integers");
         System.out.println("2. Calculate the max of two integers");
@@ -205,23 +205,28 @@ public class MainProgram {
         b=sc.nextInt();
 
         if(m==1){
-            if(a>=b)
-                answer=b;
-            else
-                answer=a;
-            System.out.println("The min is "+answer);
+            hw_min_1815330(a,b);
         }else if(m==2){
-            if(a>=b)
-                answer=a;
-            else
-                answer=b;
-            System.out.println("The max is "+answer);
+            hw_max_1815330(a,b);
         }else{
             System.out.println("wrong menu number!");
         }
-
-        
-
+    }
+    public void hw_min_1815330(int a,int b){
+        int answer;
+        if(a>=b)
+            answer=b;
+        else
+            answer=a;
+        System.out.println("The min is "+answer);
+    }
+    public void hw_max_1815330(int a,int b){
+        int answer;
+        if(a>=b)
+            answer=a;
+        else
+            answer=b;
+        System.out.println("The max is "+answer);
     }
 
 }
