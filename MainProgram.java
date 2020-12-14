@@ -49,6 +49,11 @@ public class MainProgram {
             System.out.println("[Student ID : "+ studentID +"]");
             hw_1815330();
         }
+        
+        else if(studentID == 1815542) {
+        	System.out.println("[Student ID: " + studentID + "]");
+        	hw_1815542();
+        }
 
         else{
             System.out.println("To be developed...\n");
@@ -281,5 +286,49 @@ public void func_1814998(){
       min = (min < n3)? min:n3;
       return min;
     }
+    
+    public void hw_1815542() {
+    	int a, b, c;
+    	int menu;
+    	Scanner sc = new Scanner(System.in);
+    	
+    	System.out.println("1. Calculate Triangle Area");
+        System.out.println("2. Calculate Trapezoid Area");
+        System.out.print("Enter menu number: ");
+    	
+        menu = sc.nextInt();
+        
+        if(menu == 1) {
+        	System.out.println("[Calculate Triangle Area]");
+        	System.out.print("Enter base(¹Øº¯): ");
+        	a = sc.nextInt();
+        	System.out.print("Enter height(³ôÀÌ): ");
+        	b = sc.nextInt();
+        	System.out.println("triangle Area : " + triangleArea(a, b));
+        }
+        else if(menu == 2) {
+        	System.out.println("[Calculate Trapezoid Area]");
+        	System.out.print("Enter base1(À­º¯): ");
+        	a = sc.nextInt();
+        	System.out.print("Enter base2(¹Øº¯): ");
+        	b = sc.nextInt();
+        	System.out.print("Enter height(³ôÀÌ): ");
+        	c = sc.nextInt();
+        	System.out.println("trapezoid Area : " + trapezoidArea(a, b, c));
+        }
+        else
+        	System.out.println("Wrong: You can select only 1 or 2");
+    }
+    
+    public int triangleArea(int a, int b) {
+    	int area;
+    	area = a * b / 2;
+		return area;
+    }
 
+    public int trapezoidArea(int a, int b, int c) {
+    	int area;
+    	area = ((a + b) * c) / 2;
+		return area;
+    }
 }
