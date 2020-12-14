@@ -268,14 +268,14 @@ public void func_1814998(){
       }
     }
 
-    public int calcThreeIntMax(int n1, int n2, int n3){
+    public static int calcThreeIntMax(int n1, int n2, int n3){
       int max;
       max = (n1 > n2)? n1:n2;
       max = (max > n3)? max:n3;
       return max;
     }
 
-    public int calcThreeIntMin(int n1, int n2, int n3){
+    public static int calcThreeIntMin(int n1, int n2, int n3){
       int min;
       min = (n1 < n2)? n1:n2;
       min = (min < n3)? min:n3;
