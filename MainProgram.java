@@ -36,7 +36,7 @@ public class MainProgram {
         }
 	else if(studentID == 1815514) {
 		System.out.println("[Student ID: 1815514]");
-<<<<<<< HEAD
+
 		calculate_1815514();
 	}
 
@@ -45,15 +45,11 @@ public class MainProgram {
             func_1814998();
         }
 
-
-=======
-        calculate_1815514();
-    }
         else if(studentID == 1815330){
             System.out.println("[Student ID : "+ studentID +"]");
             hw_1815330();
         }
->>>>>>> origin/main
+
         else{
             System.out.println("To be developed...\n");
         }
@@ -242,7 +238,6 @@ public class MainProgram {
         System.out.println("The max is "+answer);
     }
 
-}
 
 
 
@@ -287,4 +282,4 @@ public void func_1814998(){
       return min;
     }
 
-
+}
