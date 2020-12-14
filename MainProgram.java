@@ -36,8 +36,12 @@ public class MainProgram {
         }
 	else if(studentID == 1815514) {
 		System.out.println("[Student ID: 1815514]");
-		calculate_1815514();
-	}
+        calculate_1815514();
+    }
+        else if(studentID == 1815330){
+            System.out.println("[Student ID : "+ studentID +"]");
+            hw_1815330();
+        }
         else{
             System.out.println("To be developed...\n");
         }
@@ -184,6 +188,40 @@ public class MainProgram {
     		if((x * i) % y == 0)
     			least = x * i;
     	return least;
+    }
+
+    public void hw_1815330(){
+        Scanner sc = new Scanner(System.in);
+        int m,a,b,answer;
+
+        System.out.println("1. Calculate the min of two integers");
+        System.out.println("2. Calculate the max of two integers");
+        System.out.print("Enter menu numbers : ");
+        m=sc.nextInt();
+
+        System.out.print("Input number 1 :");
+        a=sc.nextInt();
+        System.out.print("Input number 2 : ");
+        b=sc.nextInt();
+
+        if(m==1){
+            if(a>=b)
+                answer=b;
+            else
+                answer=a;
+            System.out.println("The min is "+answer);
+        }else if(m==2){
+            if(a>=b)
+                answer=a;
+            else
+                answer=b;
+            System.out.println("The max is "+answer);
+        }else{
+            System.out.println("wrong menu number!");
+        }
+
+        
+
     }
 
 }
