@@ -36,16 +36,29 @@ public class MainProgram {
         }
 	else if(studentID == 1815514) {
 		System.out.println("[Student ID: 1815514]");
+<<<<<<< HEAD
+		calculate_1815514();
+	}
+
+	else if(studentID == 1814998) {
+            System.out.println("[Student ID: " + studentID + "]");
+            func_1814998();
+        }
+
+
+=======
         calculate_1815514();
     }
         else if(studentID == 1815330){
             System.out.println("[Student ID : "+ studentID +"]");
             hw_1815330();
         }
+>>>>>>> origin/main
         else{
             System.out.println("To be developed...\n");
         }
     }
+
 
     public void calculate_1815514(){
     	Scanner input = new Scanner(System.in);
@@ -230,3 +243,48 @@ public class MainProgram {
     }
 
 }
+
+
+
+
+public void func_1814998(){
+      Scanner scan = new Scanner(System.in);
+      int select, number1, number2, number3, answer;
+      System.out.println("1.Calculate Maximum");
+      System.out.println("2.Calculate Minimum");
+      System.out.print("Enter menu number: ");
+      select = scan.nextInt();
+
+      System.out.println("please enter your number");
+      System.out.print("number1 : ");
+      number1 = scan.nextInt();
+      System.out.print("number2 : ");
+      number2 = scan.nextInt();
+      System.out.print("number3 : ");
+      number3 = scan.nextInt();
+
+      if(select==1){
+        answer = calcThreeIntMax(number1, number2, number3);
+        System.out.println("Maximun number is "+answer);
+      }
+      else if(select==2){
+        answer = calcThreeIntMin(number1, number2, number3);
+        System.out.println("Minimum number is "+answer);
+      }
+    }
+
+    public int calcThreeIntMax(int n1, int n2, int n3){
+      int max;
+      max = (n1 > n2)? n1:n2;
+      max = (max > n3)? max:n3;
+      return max;
+    }
+
+    public int calcThreeIntMin(int n1, int n2, int n3){
+      int min;
+      min = (n1 < n2)? n1:n2;
+      min = (min < n3)? min:n3;
+      return min;
+    }
+
+
