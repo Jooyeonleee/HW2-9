@@ -54,6 +54,11 @@ public class MainProgram {
         	System.out.println("[Student ID: " + studentID + "]");
         	hw_1815542();
         }
+        
+        else if(studentID == 1815595) {
+        	System.out.println("[Student ID: " + studentID + "]");
+        	hw_1815595();
+        }
 
         else{
             System.out.println("To be developed...\n");
@@ -331,4 +336,53 @@ public void func_1814998(){
     	area = ((a + b) * c) / 2;
 		return area;
     }
+
+
+	public void hw_1815595(){
+		Scanner scan = new Scanner(System.in);
+	    int choice;
+	    System.out.println("1.Calculate Factorial");
+	    System.out.println("2.Calculate Power");
+	    System.out.print("Enter menu number: ");
+	    choice = scan.nextInt();
+	
+	    if(choice==1){
+	      System.out.println("Enter number(n>0):");
+	      int n = scan.nextInt();
+	      System.out.println(n+"!="+factorial(n));
+	    }
+	    
+	    else if(choice==2){
+	      System.out.println("Raise {a} to the {b}th power.");
+	      System.out.println("a:");
+	      int a = scan.nextInt();
+	      System.out.println("b:");
+	      int b = scan.nextInt();
+	      System.out.println(a+"^"+b+"="+power(a,b));
+	      
+	    }
+	    return;
+	}
+	
+	public int factorial(int n) {
+		int result =1;
+		if(n<=1) return n;
+		else {
+			for(int i=n; i>=1; i--) {
+				result=result*i;
+			}
+		}
+		return result;
+	}
+	
+	public int power(int a,int b) {
+		int result = 1;
+		if(b==0) return 1;
+		else{
+			for(int i=0;i<b;i++) {
+			result *= a;
+			}
+		}
+		return result;
+	}
 }
