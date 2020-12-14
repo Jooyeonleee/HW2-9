@@ -81,12 +81,12 @@ public class MainProgram {
             try{
                 System.out.println("1. Calculate max");
                 System.out.println("2. Calculate min");
-                System.out.print("Enter menu number: ");
+                System.out.print("Enter menu number(1 or 2): ");
                 num = sc.nextInt();
                 if(num==1){
                     while(true){
                         try{
-                            System.out.print("Enter two numbers to compare:");
+                            System.out.print("Enter two integers to compare:");
                             a = sc.nextInt();
                             b = sc.nextInt();
                             System.out.println("Max value is " +max(a,b));
